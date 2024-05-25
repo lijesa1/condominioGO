@@ -1,7 +1,7 @@
 package com.proyectoCondominio.proyectoCondominio.repository;
 
-import com.proyectoCondominio.proyectoCondominio.entity.Propietarios;
+import com.proyectoCondominio.proyectoCondominio.entity.LibroVisita;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PropietarioRepository extends JpaRepository<Propietarios, Long> {
+public interface PropietarioRepository extends JpaRepository<LibroVisita, Long> {
 }

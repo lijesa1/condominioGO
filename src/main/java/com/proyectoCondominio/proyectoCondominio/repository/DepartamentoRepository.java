@@ -1,7 +1,7 @@
 package com.proyectoCondominio.proyectoCondominio.repository;
 
-import com.proyectoCondominio.proyectoCondominio.entity.Departamentos;
+import com.proyectoCondominio.proyectoCondominio.entity.Persona;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface DepartamentoRepository extends JpaRepository<Departamentos, Long> {
+public interface DepartamentoRepository extends JpaRepository<Persona, Long> {
 }

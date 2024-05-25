@@ -8,9 +8,9 @@ import lombok.Setter;
 @Entity
 @Setter
 @Getter
-@Table(name = "departamento")
+@Table(name = "Tipo_Bien_Inmueble")
+public class TipoBienInmueble {
 
-public class Departamentos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,11 +21,22 @@ public class Departamentos {
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "propietario_id", nullable = false)
-    private int propietario_id;
+    private BienInmueble bienInmueble;
 
     @ManyToOne
     @JoinColumn(name = "torre_id", nullable = false)
     private int torre_id;
 
 
+    @Column(name = "estado", nullable = false)
+    private Boolean estado;
+
+    @Column(name = "nombre", nullable = false, length = 255)
+    private String nombre;
+
+    @Column(name = "apellido", nullable = false, length = 255)
+    private String apellido;
+
+    @Column(name = "dni", nullable = false, length = 255)
+    private String dni;
 }
