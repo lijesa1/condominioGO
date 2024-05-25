@@ -1,8 +1,11 @@
+
 package com.proyectoCondominio.proyectoCondominio.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
@@ -10,14 +13,16 @@ import java.util.Date;
 @Entity
 @Setter
 @Getter
-@Table(name = "Libro_Visita")
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "libro_visita")
 public class LibroVisita {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "fecha_visita", nullable = false)
-  private Date fechaVisita;
+    private Date fechaVisita;
 
     @Column(name = "usuario_creacion", nullable = false)
     private String usuarioCreacion;
@@ -30,3 +35,4 @@ public class LibroVisita {
     @JoinColumn(name = "personaRegistradorId", nullable = false)
     private Persona persona;
 }
+

@@ -2,13 +2,17 @@ package com.proyectoCondominio.proyectoCondominio.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Setter
 @Getter
-@Table(name = "Bien_Inmueble")
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "bien_inmueble")
 public class BienInmueble {
 
     @Id
@@ -36,7 +40,8 @@ public class BienInmueble {
     @Column(name = "en_alquiler", nullable = false)
     private Boolean enAlquiler;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "tipo_bien_inmueble_id", nullable = false)
+    @ManyToOne(targetEntity = TipoBienInmueble.class)
     private TipoBienInmueble tipoBienInmueble;
+
+
 }

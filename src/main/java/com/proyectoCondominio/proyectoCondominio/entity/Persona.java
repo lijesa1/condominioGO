@@ -1,15 +1,23 @@
+
 package com.proyectoCondominio.proyectoCondominio.entity;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 @Setter
 @Getter
-@Table(name = "Persona")
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "persona")
 
 public class Persona {
     @Id
@@ -61,31 +69,23 @@ public class Persona {
     @Column(name = "fecha_eliminacion", nullable = false)
     private Date fechaEliminacion;
 
-    @Column(name = "tipo_documento_id", nullable = false)
-    private Integer tipoDocumentoId;
-
-    @Column(name = "tipo_persona_id", nullable = false)
-    private int tipoPersonaId;
-
     @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "tipo_documento_id", nullable = false)
+    @OneToOne(targetEntity = TipoDocumento.class, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "tipo_documento_id")
     private TipoDocumento tipoDocumento;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "tipo_persona_id", nullable = false)
+    @OneToOne(targetEntity = TipoPersona.class)
+    @JoinColumn(name = "tipo_persona_id")
     private TipoPersona tipoPersona;
 
     @OneToMany(mappedBy = "persona", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
     private Set<PersonaBienInmueble> personaBienInmuebles;
 
-    @OneToMany(mappedBy = "persona", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
-    private Set<LibroVisita> libroVisitas;
+    @OneToMany(targetEntity = LibroVisita.class, fetch = FetchType.LAZY, mappedBy = "persona")
+    private List<LibroVisita> libroVisitas;
 
-    @OneToMany(mappedBy = "persona", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
-    private Set<DetalleLibroVisita> detalleLibroVisitas;
-
-
-
+    /*@OneToMany(mappedBy = "persona", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+    private Set<DetalleLibroVisita> detalleLibroVisitas;*/
 
 }
+
