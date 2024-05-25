@@ -1,4 +1,7 @@
 package com.proyectoCondominio.proyectoCondominio.service;
 
-public class TipoPersonaService {
+import org.springframework.stereotype.Service;
+
+@Service
+public interface TipoPersonaService {
 }

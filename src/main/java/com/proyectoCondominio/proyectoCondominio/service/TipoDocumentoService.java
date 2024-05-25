@@ -1,4 +1,10 @@
 package com.proyectoCondominio.proyectoCondominio.service;
 
-public class TipoDocumentoService {
+
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+
+@Service
+
+public interface TipoDocumentoService {
 }

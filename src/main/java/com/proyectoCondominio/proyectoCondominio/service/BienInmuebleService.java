@@ -1,5 +1,13 @@
 package com.proyectoCondominio.proyectoCondominio.service;
 
 
-public class BienInmuebleService {
+import org.springframework.stereotype.Service;
+
+@Service
+
+public interface BienInmuebleService {
+
+
+
+
 }
