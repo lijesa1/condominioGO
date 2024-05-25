@@ -1,4 +1,4 @@
 package com.proyectoCondominio.proyectoCondominio.controller;
 
-public class PropietarioController {
+public class TipoBienInmuebleController {
 }

@@ -1,4 +1,5 @@
 package com.proyectoCondominio.proyectoCondominio.service;
 
-public class VisitanteService {
+
+public class BienInmuebleService {
 }

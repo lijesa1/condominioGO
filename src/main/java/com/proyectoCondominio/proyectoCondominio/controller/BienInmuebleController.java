@@ -5,5 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(name = "/condominio")
-public class DepartamentoController {
+public class BienInmuebleController {
+
+
+
 }
